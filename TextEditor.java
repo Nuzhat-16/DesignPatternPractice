@@ -3,7 +3,6 @@ interface TextComponent {
     String getText();
     String getDescription();
 }
-
 class Text implements TextComponent {
     private String text;
 
@@ -17,7 +16,6 @@ class Text implements TextComponent {
         return text + ">";
     }
 }
-
 // Decorator abstract class
 abstract class TextDecorator implements TextComponent {
     protected TextComponent textComponent;
@@ -25,58 +23,50 @@ abstract class TextDecorator implements TextComponent {
     public TextDecorator(TextComponent textComponent) {
         this.textComponent = textComponent;
     }
-
     @Override
     public String getText() {
         return textComponent.getText();
-    }
-
-    @Override
+    } 
     public String getDescription() {
         return textComponent.getDescription();
     }
 }
-
 // Concrete decorators
 class BoldText extends TextDecorator {
     public BoldText(TextComponent textComponent) {
         super(textComponent);
     }
 
-    @Override
+   
     public String getDescription() {
         return super.getDescription() + ", bold";
     }
 }
-
 class ItalicText extends TextDecorator {
     public ItalicText(TextComponent textComponent) {
         super(textComponent);
     }
-
-    @Override
+   
     public String getDescription() {
         return super.getDescription() + ", italic";
     }
 }
-
 class BoldItalicText extends TextDecorator {
     public BoldItalicText(TextComponent textComponent) {
         super(textComponent);
     }
 
-    @Override
+   
     public String getDescription() {
         return super.getDescription() + ", bold and italic";
     }
 }
-
 class UnderLineText extends TextDecorator {
     public UnderLineText(TextComponent textComponent) {
         super(textComponent);
     }
 
-    @Override
+  
     public String getDescription() {
         return super.getDescription() + ", underline";
     }
