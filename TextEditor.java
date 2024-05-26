@@ -1,25 +1,18 @@
 package com.nujhat.texteditor;
-
-
 interface TextComponent {
     String getText();
     String getDescription();
 }
 
-// Concrete component
 class Text implements TextComponent {
     private String text;
 
     public Text(String text) {
         this.text = text;
     }
-
-
     public String getText() {
         return text;
     }
-
-
     public String getDescription() {
         return text + ">";
     }
@@ -89,7 +82,7 @@ class UnderLineText extends TextDecorator {
     }
 }
 
-// Main class to test the text editor
+// Main class 
 public class TextEditor {
     public static void main(String[] args) {
         TextComponent myText = new Text("I am a DP");
