@@ -1,7 +1,6 @@
-package com.Nujhat.paymentsystem;
+package com.nujhat.paymentsystem;
 public class PaymentSystem {
 
-    // Strategy interface
     interface PaymentStrategy {
         boolean pay(double amount);
     }
@@ -18,7 +17,7 @@ public class PaymentSystem {
     class PayPalPayment implements PaymentStrategy {
         public boolean pay(double amount) {
             System.out.println("making payment using PayPal");
-            // Do something
+
             return true;
         }
     }
@@ -41,7 +40,7 @@ public class PaymentSystem {
         }
     }
 
-    // Method to make payment
+
     public boolean makePayment(String paymentType, double amount) {
         PaymentStrategy strategy;
         switch (paymentType) {
@@ -63,7 +62,7 @@ public class PaymentSystem {
         return strategy.pay(amount);
     }
 
-    // Main method to test the payment system
+    // Main method
     public static void main(String[] args) {
         PaymentSystem paymentSystem = new PaymentSystem();
         paymentSystem.makePayment("Bank", 200);
